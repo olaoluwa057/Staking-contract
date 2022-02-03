@@ -8,13 +8,12 @@ async function main() {
   
 
   // We get the contract to deploy
-  const StakingToken = await hre.ethers.getContractFactory("stakingToken");
-  console.log("depolying stacking token")
-  const stakingToken = await StakingToken.deploy();
+  const Unipool = await hre.ethers.getContractFactory("Unipool");
+  const unipool = await Unipool.deploy();
 
-  await stakingToken.deployed();
+  await unipool.deployed();
 
-  console.log("StakingToken deployed to:", stakingToken.address);
+  console.log("Unipool deployed to:", unipool.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere

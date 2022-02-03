@@ -1,12 +1,12 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "C:\\Users\\user\\Desktop\\nahmii\\contracts\\stakingToken.sol": {
-      "lastModificationDate": 1643905975555,
-      "contentHash": "80d6582d3a0e77d2b219ab821cadc22d",
-      "sourceName": "contracts/stakingToken.sol",
+    "C:\\Users\\user\\Desktop\\unipool-hardhat\\contracts\\CurveRewards.sol": {
+      "lastModificationDate": 1641830688723,
+      "contentHash": "da01c4c7dd0749bf861b449289627a23",
+      "sourceName": "contracts/CurveRewards.sol",
       "solcConfig": {
-        "version": "0.7.6",
+        "version": "0.5.12",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -29,60 +29,26 @@
         }
       },
       "imports": [
-        "@openzeppelin/contracts/token/ERC20/ERC20.sol"
+        "@openzeppelin/contracts/math/Math.sol",
+        "@openzeppelin/contracts/math/SafeMath.sol",
+        "@openzeppelin/contracts/ownership/Ownable.sol",
+        "@openzeppelin/contracts/token/ERC20/SafeERC20.sol",
+        "./IRewardDistributionRecipient.sol"
       ],
       "versionPragmas": [
-        ">=0.6.0 <0.8.0"
+        "^0.5.0"
       ],
       "artifacts": [
-        "stakingToken"
+        "CurveRewards",
+        "LPTokenWrapper"
       ]
     },
-    "C:\\Users\\user\\Desktop\\nahmii\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol": {
-      "lastModificationDate": 1643904113990,
-      "contentHash": "8065b340476f61365c076897199425f1",
-      "sourceName": "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+    "C:\\Users\\user\\Desktop\\unipool-hardhat\\node_modules\\@openzeppelin\\contracts\\math\\Math.sol": {
+      "lastModificationDate": 1643099671944,
+      "contentHash": "9ad868f5e58c8c9a6fc453277f776ebd",
+      "sourceName": "@openzeppelin/contracts/math/Math.sol",
       "solcConfig": {
-        "version": "0.7.6",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "../../utils/Context.sol",
-        "./IERC20.sol",
-        "../../math/SafeMath.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.0 <0.8.0"
-      ],
-      "artifacts": [
-        "ERC20"
-      ]
-    },
-    "C:\\Users\\user\\Desktop\\nahmii\\node_modules\\@openzeppelin\\contracts\\utils\\Context.sol": {
-      "lastModificationDate": 1643904113896,
-      "contentHash": "2adbd82f6d055a4751566d4671512b03",
-      "sourceName": "@openzeppelin/contracts/utils/Context.sol",
-      "solcConfig": {
-        "version": "0.7.6",
+        "version": "0.5.12",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -106,18 +72,201 @@
       },
       "imports": [],
       "versionPragmas": [
-        ">=0.6.0 <0.8.0"
+        "^0.5.0"
+      ],
+      "artifacts": [
+        "Math"
+      ]
+    },
+    "C:\\Users\\user\\Desktop\\unipool-hardhat\\node_modules\\@openzeppelin\\contracts\\math\\SafeMath.sol": {
+      "lastModificationDate": 1643099671944,
+      "contentHash": "d208da96b6f6c1d204ee8248087cf2d7",
+      "sourceName": "@openzeppelin/contracts/math/SafeMath.sol",
+      "solcConfig": {
+        "version": "0.5.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.5.0"
+      ],
+      "artifacts": [
+        "SafeMath"
+      ]
+    },
+    "C:\\Users\\user\\Desktop\\unipool-hardhat\\node_modules\\@openzeppelin\\contracts\\ownership\\Ownable.sol": {
+      "lastModificationDate": 1643099671960,
+      "contentHash": "3ef838761bd8d0900247fe606eae2083",
+      "sourceName": "@openzeppelin/contracts/ownership/Ownable.sol",
+      "solcConfig": {
+        "version": "0.5.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../GSN/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.5.0"
+      ],
+      "artifacts": [
+        "Ownable"
+      ]
+    },
+    "C:\\Users\\user\\Desktop\\unipool-hardhat\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\SafeERC20.sol": {
+      "lastModificationDate": 1643099672022,
+      "contentHash": "83fbce907d2b44fae67a751b83804e02",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/SafeERC20.sol",
+      "solcConfig": {
+        "version": "0.5.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC20.sol",
+        "../../math/SafeMath.sol",
+        "../../utils/Address.sol"
+      ],
+      "versionPragmas": [
+        "^0.5.0"
+      ],
+      "artifacts": [
+        "SafeERC20"
+      ]
+    },
+    "C:\\Users\\user\\Desktop\\unipool-hardhat\\contracts\\IRewardDistributionRecipient.sol": {
+      "lastModificationDate": 1643018918475,
+      "contentHash": "134f288d75fb619b63e6879f5cef0f75",
+      "sourceName": "contracts/IRewardDistributionRecipient.sol",
+      "solcConfig": {
+        "version": "0.5.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/ownership/Ownable.sol"
+      ],
+      "versionPragmas": [
+        "^0.5.0"
+      ],
+      "artifacts": [
+        "IRewardDistributionRecipient"
+      ]
+    },
+    "C:\\Users\\user\\Desktop\\unipool-hardhat\\node_modules\\@openzeppelin\\contracts\\GSN\\Context.sol": {
+      "lastModificationDate": 1643099671881,
+      "contentHash": "32a66f6f4d0584b403f26f8e5e4d17b5",
+      "sourceName": "@openzeppelin/contracts/GSN/Context.sol",
+      "solcConfig": {
+        "version": "0.5.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.5.0"
       ],
       "artifacts": [
         "Context"
       ]
     },
-    "C:\\Users\\user\\Desktop\\nahmii\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\IERC20.sol": {
-      "lastModificationDate": 1643904114099,
-      "contentHash": "e0a41531d159d3a32f84b7a3ecf9fabb",
+    "C:\\Users\\user\\Desktop\\unipool-hardhat\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\IERC20.sol": {
+      "lastModificationDate": 1643099672022,
+      "contentHash": "183ff1f5e5f04bcfa85cee597bcb0236",
       "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
       "solcConfig": {
-        "version": "0.7.6",
+        "version": "0.5.12",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -141,18 +290,18 @@
       },
       "imports": [],
       "versionPragmas": [
-        ">=0.6.0 <0.8.0"
+        "^0.5.0"
       ],
       "artifacts": [
         "IERC20"
       ]
     },
-    "C:\\Users\\user\\Desktop\\nahmii\\node_modules\\@openzeppelin\\contracts\\math\\SafeMath.sol": {
-      "lastModificationDate": 1643904114209,
-      "contentHash": "e03e12206057e809eb76c5f681170c32",
-      "sourceName": "@openzeppelin/contracts/math/SafeMath.sol",
+    "C:\\Users\\user\\Desktop\\unipool-hardhat\\node_modules\\@openzeppelin\\contracts\\utils\\Address.sol": {
+      "lastModificationDate": 1643099672116,
+      "contentHash": "fa0cfc6e9682e94f6adb13d86ee8a66f",
+      "sourceName": "@openzeppelin/contracts/utils/Address.sol",
       "solcConfig": {
-        "version": "0.7.6",
+        "version": "0.5.12",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -176,10 +325,129 @@
       },
       "imports": [],
       "versionPragmas": [
-        ">=0.6.0 <0.8.0"
+        "^0.5.5"
       ],
       "artifacts": [
-        "SafeMath"
+        "Address"
+      ]
+    },
+    "C:\\Users\\user\\Desktop\\unipool-hardhat\\contracts\\Unipool.sol": {
+      "lastModificationDate": 1643906209796,
+      "contentHash": "38ed845693f32ea633c2e39710a2bcb4",
+      "sourceName": "contracts/Unipool.sol",
+      "solcConfig": {
+        "version": "0.5.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/math/Math.sol",
+        "@openzeppelin/contracts/math/SafeMath.sol",
+        "@openzeppelin/contracts/ownership/Ownable.sol",
+        "@openzeppelin/contracts/token/ERC20/SafeERC20.sol",
+        "./IRewardDistributionRecipient.sol"
+      ],
+      "versionPragmas": [
+        "^0.5.0"
+      ],
+      "artifacts": [
+        "LPTokenWrapper",
+        "Unipool"
+      ]
+    },
+    "C:\\Users\\user\\Desktop\\unipool-hardhat\\contracts\\iETHRewards.sol": {
+      "lastModificationDate": 1641830688723,
+      "contentHash": "d9b69dad9a3567c6da3c65385c9affcd",
+      "sourceName": "contracts/iETHRewards.sol",
+      "solcConfig": {
+        "version": "0.5.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/math/Math.sol",
+        "@openzeppelin/contracts/math/SafeMath.sol",
+        "@openzeppelin/contracts/ownership/Ownable.sol",
+        "@openzeppelin/contracts/token/ERC20/SafeERC20.sol",
+        "./IRewardDistributionRecipient.sol"
+      ],
+      "versionPragmas": [
+        "^0.5.0"
+      ],
+      "artifacts": [
+        "LPTokenWrapper",
+        "iETHRewards"
+      ]
+    },
+    "C:\\Users\\user\\Desktop\\unipool-hardhat\\contracts\\Migrations.sol": {
+      "lastModificationDate": 1643018919247,
+      "contentHash": "5529801f2a16e427fc8a1151ac2b5b41",
+      "sourceName": "contracts/Migrations.sol",
+      "solcConfig": {
+        "version": "0.5.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.5.0"
+      ],
+      "artifacts": [
+        "Migrations"
       ]
     }
   }

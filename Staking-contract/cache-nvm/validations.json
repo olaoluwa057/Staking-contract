@@ -1,0 +1,983 @@
+{
+  "version": "3.2",
+  "log": [
+    {
+      "Context": {
+        "src": "@openzeppelin\\contracts\\GSN\\Context.sol:13",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "Math": {
+        "src": "@openzeppelin\\contracts\\math\\Math.sol:6",
+        "version": {
+          "withMetadata": "07c4bc82d41b6b47e694834b18a5098aac1fc8df221a92edd10005845f28c007",
+          "withoutMetadata": "07c4bc82d41b6b47e694834b18a5098aac1fc8df221a92edd10005845f28c007",
+          "linkedWithoutMetadata": "07c4bc82d41b6b47e694834b18a5098aac1fc8df221a92edd10005845f28c007"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "SafeMath": {
+        "src": "@openzeppelin\\contracts\\math\\SafeMath.sol:16",
+        "version": {
+          "withMetadata": "07c4bc82d41b6b47e694834b18a5098aac1fc8df221a92edd10005845f28c007",
+          "withoutMetadata": "07c4bc82d41b6b47e694834b18a5098aac1fc8df221a92edd10005845f28c007",
+          "linkedWithoutMetadata": "07c4bc82d41b6b47e694834b18a5098aac1fc8df221a92edd10005845f28c007"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "Ownable": {
+        "src": "@openzeppelin\\contracts\\ownership\\Ownable.sol:13",
+        "inherit": [
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "owner()",
+          "isOwner()",
+          "renounceOwnership()",
+          "transferOwnership(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Ownable",
+            "src": "@openzeppelin\\contracts\\ownership\\Ownable.sol:21"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "Ownable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin\\contracts\\ownership\\Ownable.sol:14"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      },
+      "IERC20": {
+        "src": "@openzeppelin\\contracts\\token\\ERC20\\IERC20.sol:7",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "SafeERC20": {
+        "src": "@openzeppelin\\contracts\\token\\ERC20\\SafeERC20.sol:16",
+        "version": {
+          "withMetadata": "07c4bc82d41b6b47e694834b18a5098aac1fc8df221a92edd10005845f28c007",
+          "withoutMetadata": "07c4bc82d41b6b47e694834b18a5098aac1fc8df221a92edd10005845f28c007",
+          "linkedWithoutMetadata": "07c4bc82d41b6b47e694834b18a5098aac1fc8df221a92edd10005845f28c007"
+        },
+        "inherit": [],
+        "libraries": [
+          "SafeMath",
+          "Address"
+        ],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "Address": {
+        "src": "@openzeppelin\\contracts\\utils\\Address.sol:6",
+        "version": {
+          "withMetadata": "07c4bc82d41b6b47e694834b18a5098aac1fc8df221a92edd10005845f28c007",
+          "withoutMetadata": "07c4bc82d41b6b47e694834b18a5098aac1fc8df221a92edd10005845f28c007",
+          "linkedWithoutMetadata": "07c4bc82d41b6b47e694834b18a5098aac1fc8df221a92edd10005845f28c007"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "IRewardDistributionRecipient": {
+        "src": "contracts\\IRewardDistributionRecipient.sol:6",
+        "inherit": [
+          "Ownable",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "notifyRewardAmount(uint256)",
+          "setRewardDistribution(address)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "contract": "IRewardDistributionRecipient",
+              "label": "rewardDistribution",
+              "type": "t_address",
+              "src": "contracts\\IRewardDistributionRecipient.sol:7"
+            },
+            {
+              "contract": "IRewardDistributionRecipient",
+              "label": "newAdmin",
+              "type": "t_mapping(t_address,t_bool)",
+              "src": "contracts\\IRewardDistributionRecipient.sol:8"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)"
+            },
+            "t_bool": {
+              "label": "bool"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      },
+      "LPTokenWrapper": {
+        "src": "contracts\\Unipool.sol:9",
+        "version": {
+          "withMetadata": "ea194a3ed8b0d344871e6bac8c9a6ca42d075fc0c94191804e8a91596d03622f",
+          "withoutMetadata": "ea194a3ed8b0d344871e6bac8c9a6ca42d075fc0c94191804e8a91596d03622f",
+          "linkedWithoutMetadata": "ea194a3ed8b0d344871e6bac8c9a6ca42d075fc0c94191804e8a91596d03622f"
+        },
+        "inherit": [],
+        "libraries": [
+          "SafeMath",
+          "SafeERC20"
+        ],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "stake(uint256)",
+          "withdraw(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "state-variable-assignment",
+            "name": "uni",
+            "src": "contracts\\Unipool.sol:13"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "LPTokenWrapper",
+              "label": "uni",
+              "type": "t_contract(IERC20)465",
+              "src": "contracts\\Unipool.sol:13"
+            },
+            {
+              "contract": "LPTokenWrapper",
+              "label": "_totalSupply",
+              "type": "t_uint256",
+              "src": "contracts\\Unipool.sol:15"
+            },
+            {
+              "contract": "LPTokenWrapper",
+              "label": "_balances",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "contracts\\Unipool.sol:16"
+            }
+          ],
+          "types": {
+            "t_contract(IERC20)465": {
+              "label": "contract IERC20"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_address": {
+              "label": "address"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      },
+      "Unipool": {
+        "src": "contracts\\Unipool.sol:39",
+        "version": {
+          "withMetadata": "3254c3f1ea65953d7b44ef5ee9f5b6bfff586f477be35aadbab56200d81fd76a",
+          "withoutMetadata": "3254c3f1ea65953d7b44ef5ee9f5b6bfff586f477be35aadbab56200d81fd76a",
+          "linkedWithoutMetadata": "3254c3f1ea65953d7b44ef5ee9f5b6bfff586f477be35aadbab56200d81fd76a"
+        },
+        "inherit": [
+          "IRewardDistributionRecipient",
+          "Ownable",
+          "Context",
+          "LPTokenWrapper"
+        ],
+        "libraries": [
+          "Math"
+        ],
+        "methods": [
+          "lastTimeRewardApplicable()",
+          "rewardPerToken()",
+          "earned(address)",
+          "stake(uint256)",
+          "withdraw(uint256)",
+          "exit()",
+          "getReward()",
+          "notifyRewardAmount(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "state-variable-assignment",
+            "name": "snx",
+            "src": "contracts\\Unipool.sol:40"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "periodFinish",
+            "src": "contracts\\Unipool.sol:45"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "rewardRate",
+            "src": "contracts\\Unipool.sol:46"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "Unipool",
+              "label": "snx",
+              "type": "t_contract(IERC20)465",
+              "src": "contracts\\Unipool.sol:40"
+            },
+            {
+              "contract": "Unipool",
+              "label": "periodFinish",
+              "type": "t_uint256",
+              "src": "contracts\\Unipool.sol:45"
+            },
+            {
+              "contract": "Unipool",
+              "label": "rewardRate",
+              "type": "t_uint256",
+              "src": "contracts\\Unipool.sol:46"
+            },
+            {
+              "contract": "Unipool",
+              "label": "lastUpdateTime",
+              "type": "t_uint256",
+              "src": "contracts\\Unipool.sol:47"
+            },
+            {
+              "contract": "Unipool",
+              "label": "rewardPerTokenStored",
+              "type": "t_uint256",
+              "src": "contracts\\Unipool.sol:48"
+            },
+            {
+              "contract": "Unipool",
+              "label": "userRewardPerTokenPaid",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "contracts\\Unipool.sol:50"
+            },
+            {
+              "contract": "Unipool",
+              "label": "rewards",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "contracts\\Unipool.sol:51"
+            }
+          ],
+          "types": {
+            "t_contract(IERC20)465": {
+              "label": "contract IERC20"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_address": {
+              "label": "address"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      }
+    },
+    {
+      "Context": {
+        "src": "@openzeppelin\\contracts\\GSN\\Context.sol:13",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "Math": {
+        "src": "@openzeppelin\\contracts\\math\\Math.sol:6",
+        "version": {
+          "withMetadata": "07c4bc82d41b6b47e694834b18a5098aac1fc8df221a92edd10005845f28c007",
+          "withoutMetadata": "07c4bc82d41b6b47e694834b18a5098aac1fc8df221a92edd10005845f28c007",
+          "linkedWithoutMetadata": "07c4bc82d41b6b47e694834b18a5098aac1fc8df221a92edd10005845f28c007"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "SafeMath": {
+        "src": "@openzeppelin\\contracts\\math\\SafeMath.sol:16",
+        "version": {
+          "withMetadata": "07c4bc82d41b6b47e694834b18a5098aac1fc8df221a92edd10005845f28c007",
+          "withoutMetadata": "07c4bc82d41b6b47e694834b18a5098aac1fc8df221a92edd10005845f28c007",
+          "linkedWithoutMetadata": "07c4bc82d41b6b47e694834b18a5098aac1fc8df221a92edd10005845f28c007"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "Ownable": {
+        "src": "@openzeppelin\\contracts\\ownership\\Ownable.sol:13",
+        "inherit": [
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "owner()",
+          "isOwner()",
+          "renounceOwnership()",
+          "transferOwnership(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Ownable",
+            "src": "@openzeppelin\\contracts\\ownership\\Ownable.sol:21"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "Ownable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin\\contracts\\ownership\\Ownable.sol:14"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      },
+      "IERC20": {
+        "src": "@openzeppelin\\contracts\\token\\ERC20\\IERC20.sol:7",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "SafeERC20": {
+        "src": "@openzeppelin\\contracts\\token\\ERC20\\SafeERC20.sol:16",
+        "version": {
+          "withMetadata": "07c4bc82d41b6b47e694834b18a5098aac1fc8df221a92edd10005845f28c007",
+          "withoutMetadata": "07c4bc82d41b6b47e694834b18a5098aac1fc8df221a92edd10005845f28c007",
+          "linkedWithoutMetadata": "07c4bc82d41b6b47e694834b18a5098aac1fc8df221a92edd10005845f28c007"
+        },
+        "inherit": [],
+        "libraries": [
+          "SafeMath",
+          "Address"
+        ],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "Address": {
+        "src": "@openzeppelin\\contracts\\utils\\Address.sol:6",
+        "version": {
+          "withMetadata": "07c4bc82d41b6b47e694834b18a5098aac1fc8df221a92edd10005845f28c007",
+          "withoutMetadata": "07c4bc82d41b6b47e694834b18a5098aac1fc8df221a92edd10005845f28c007",
+          "linkedWithoutMetadata": "07c4bc82d41b6b47e694834b18a5098aac1fc8df221a92edd10005845f28c007"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "CurveRewards": {
+        "src": "contracts\\CurveRewards.sol:39",
+        "version": {
+          "withMetadata": "2955ff0ac8c38edb168583d7aed700402ac1bf2bf7af8f5d8076d5d33f695ca7",
+          "withoutMetadata": "2955ff0ac8c38edb168583d7aed700402ac1bf2bf7af8f5d8076d5d33f695ca7",
+          "linkedWithoutMetadata": "2955ff0ac8c38edb168583d7aed700402ac1bf2bf7af8f5d8076d5d33f695ca7"
+        },
+        "inherit": [
+          "IRewardDistributionRecipient",
+          "Ownable",
+          "Context",
+          "LPTokenWrapper"
+        ],
+        "libraries": [
+          "Math"
+        ],
+        "methods": [
+          "lastTimeRewardApplicable()",
+          "rewardPerToken()",
+          "earned(address)",
+          "stake(uint256)",
+          "withdraw(uint256)",
+          "exit()",
+          "getReward()",
+          "notifyRewardAmount(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "state-variable-assignment",
+            "name": "snx",
+            "src": "contracts\\CurveRewards.sol:40"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "periodFinish",
+            "src": "contracts\\CurveRewards.sol:43"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "rewardRate",
+            "src": "contracts\\CurveRewards.sol:44"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "CurveRewards",
+              "label": "snx",
+              "type": "t_contract(IERC20)465",
+              "src": "contracts\\CurveRewards.sol:40"
+            },
+            {
+              "contract": "CurveRewards",
+              "label": "periodFinish",
+              "type": "t_uint256",
+              "src": "contracts\\CurveRewards.sol:43"
+            },
+            {
+              "contract": "CurveRewards",
+              "label": "rewardRate",
+              "type": "t_uint256",
+              "src": "contracts\\CurveRewards.sol:44"
+            },
+            {
+              "contract": "CurveRewards",
+              "label": "lastUpdateTime",
+              "type": "t_uint256",
+              "src": "contracts\\CurveRewards.sol:45"
+            },
+            {
+              "contract": "CurveRewards",
+              "label": "rewardPerTokenStored",
+              "type": "t_uint256",
+              "src": "contracts\\CurveRewards.sol:46"
+            },
+            {
+              "contract": "CurveRewards",
+              "label": "userRewardPerTokenPaid",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "contracts\\CurveRewards.sol:47"
+            },
+            {
+              "contract": "CurveRewards",
+              "label": "rewards",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "contracts\\CurveRewards.sol:48"
+            }
+          ],
+          "types": {
+            "t_contract(IERC20)465": {
+              "label": "contract IERC20"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_address": {
+              "label": "address"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      },
+      "LPTokenWrapper": {
+        "src": "contracts\\iETHRewards.sol:9",
+        "version": {
+          "withMetadata": "d5b6ad841cf48c0cc031fb02c41a9beab45d2809678604811daa820a01fefe25",
+          "withoutMetadata": "d5b6ad841cf48c0cc031fb02c41a9beab45d2809678604811daa820a01fefe25",
+          "linkedWithoutMetadata": "d5b6ad841cf48c0cc031fb02c41a9beab45d2809678604811daa820a01fefe25"
+        },
+        "inherit": [],
+        "libraries": [
+          "SafeMath",
+          "SafeERC20"
+        ],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "stake(uint256)",
+          "withdraw(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "state-variable-assignment",
+            "name": "token",
+            "src": "contracts\\iETHRewards.sol:13"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "LPTokenWrapper",
+              "label": "token",
+              "type": "t_contract(IERC20)465",
+              "src": "contracts\\iETHRewards.sol:13"
+            },
+            {
+              "contract": "LPTokenWrapper",
+              "label": "_totalSupply",
+              "type": "t_uint256",
+              "src": "contracts\\iETHRewards.sol:15"
+            },
+            {
+              "contract": "LPTokenWrapper",
+              "label": "_balances",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "contracts\\iETHRewards.sol:16"
+            }
+          ],
+          "types": {
+            "t_contract(IERC20)465": {
+              "label": "contract IERC20"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_address": {
+              "label": "address"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      },
+      "IRewardDistributionRecipient": {
+        "src": "contracts\\IRewardDistributionRecipient.sol:6",
+        "inherit": [
+          "Ownable",
+          "Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "notifyRewardAmount(uint256)",
+          "setRewardDistribution(address)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "contract": "IRewardDistributionRecipient",
+              "label": "rewardDistribution",
+              "type": "t_address",
+              "src": "contracts\\IRewardDistributionRecipient.sol:7"
+            },
+            {
+              "contract": "IRewardDistributionRecipient",
+              "label": "newAdmin",
+              "type": "t_mapping(t_address,t_bool)",
+              "src": "contracts\\IRewardDistributionRecipient.sol:8"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)"
+            },
+            "t_bool": {
+              "label": "bool"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      },
+      "Migrations": {
+        "src": "contracts\\Migrations.sol:4",
+        "version": {
+          "withMetadata": "3bc4eeda5e85dad69c90a418dac0982a50b85fa6ef3df4d80d23781503c28015",
+          "withoutMetadata": "3bc4eeda5e85dad69c90a418dac0982a50b85fa6ef3df4d80d23781503c28015",
+          "linkedWithoutMetadata": "3bc4eeda5e85dad69c90a418dac0982a50b85fa6ef3df4d80d23781503c28015"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "()",
+          "setCompleted(uint256)",
+          "upgrade(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Migrations",
+            "src": "contracts\\Migrations.sol:14"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "Migrations",
+              "label": "owner",
+              "type": "t_address",
+              "src": "contracts\\Migrations.sol:5"
+            },
+            {
+              "contract": "Migrations",
+              "label": "lastCompletedMigration",
+              "type": "t_uint256",
+              "src": "contracts\\Migrations.sol:6"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      },
+      "Unipool": {
+        "src": "contracts\\Unipool.sol:39",
+        "version": {
+          "withMetadata": "f433f2b41c9ba1b1bf1cb43b6320540ad7a9b3147e2b33c89c9eaefeb82d898a",
+          "withoutMetadata": "f433f2b41c9ba1b1bf1cb43b6320540ad7a9b3147e2b33c89c9eaefeb82d898a",
+          "linkedWithoutMetadata": "f433f2b41c9ba1b1bf1cb43b6320540ad7a9b3147e2b33c89c9eaefeb82d898a"
+        },
+        "inherit": [
+          "IRewardDistributionRecipient",
+          "Ownable",
+          "Context",
+          "LPTokenWrapper"
+        ],
+        "libraries": [
+          "Math"
+        ],
+        "methods": [
+          "lastTimeRewardApplicable()",
+          "rewardPerToken()",
+          "earned(address)",
+          "stake(uint256)",
+          "withdraw(uint256)",
+          "exit()",
+          "getReward()",
+          "notifyRewardAmount(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "state-variable-assignment",
+            "name": "snx",
+            "src": "contracts\\Unipool.sol:40"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "periodFinish",
+            "src": "contracts\\Unipool.sol:45"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "rewardRate",
+            "src": "contracts\\Unipool.sol:46"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "Unipool",
+              "label": "snx",
+              "type": "t_contract(IERC20)465",
+              "src": "contracts\\Unipool.sol:40"
+            },
+            {
+              "contract": "Unipool",
+              "label": "periodFinish",
+              "type": "t_uint256",
+              "src": "contracts\\Unipool.sol:45"
+            },
+            {
+              "contract": "Unipool",
+              "label": "rewardRate",
+              "type": "t_uint256",
+              "src": "contracts\\Unipool.sol:46"
+            },
+            {
+              "contract": "Unipool",
+              "label": "lastUpdateTime",
+              "type": "t_uint256",
+              "src": "contracts\\Unipool.sol:47"
+            },
+            {
+              "contract": "Unipool",
+              "label": "rewardPerTokenStored",
+              "type": "t_uint256",
+              "src": "contracts\\Unipool.sol:48"
+            },
+            {
+              "contract": "Unipool",
+              "label": "userRewardPerTokenPaid",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "contracts\\Unipool.sol:50"
+            },
+            {
+              "contract": "Unipool",
+              "label": "rewards",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "contracts\\Unipool.sol:51"
+            }
+          ],
+          "types": {
+            "t_contract(IERC20)465": {
+              "label": "contract IERC20"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_address": {
+              "label": "address"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      },
+      "iETHRewards": {
+        "src": "contracts\\iETHRewards.sol:39",
+        "version": {
+          "withMetadata": "fe75a15ad07c2a8880143be9469b050343aa31452c727271729425717b580a67",
+          "withoutMetadata": "fe75a15ad07c2a8880143be9469b050343aa31452c727271729425717b580a67",
+          "linkedWithoutMetadata": "fe75a15ad07c2a8880143be9469b050343aa31452c727271729425717b580a67"
+        },
+        "inherit": [
+          "IRewardDistributionRecipient",
+          "Ownable",
+          "Context",
+          "LPTokenWrapper"
+        ],
+        "libraries": [
+          "Math"
+        ],
+        "methods": [
+          "lastTimeRewardApplicable()",
+          "rewardPerToken()",
+          "earned(address)",
+          "stake(uint256)",
+          "withdraw(uint256)",
+          "exit()",
+          "getReward()",
+          "notifyRewardAmount(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "state-variable-assignment",
+            "name": "snx",
+            "src": "contracts\\iETHRewards.sol:40"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "periodFinish",
+            "src": "contracts\\iETHRewards.sol:43"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "rewardRate",
+            "src": "contracts\\iETHRewards.sol:44"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "iETHRewards",
+              "label": "snx",
+              "type": "t_contract(IERC20)465",
+              "src": "contracts\\iETHRewards.sol:40"
+            },
+            {
+              "contract": "iETHRewards",
+              "label": "periodFinish",
+              "type": "t_uint256",
+              "src": "contracts\\iETHRewards.sol:43"
+            },
+            {
+              "contract": "iETHRewards",
+              "label": "rewardRate",
+              "type": "t_uint256",
+              "src": "contracts\\iETHRewards.sol:44"
+            },
+            {
+              "contract": "iETHRewards",
+              "label": "lastUpdateTime",
+              "type": "t_uint256",
+              "src": "contracts\\iETHRewards.sol:45"
+            },
+            {
+              "contract": "iETHRewards",
+              "label": "rewardPerTokenStored",
+              "type": "t_uint256",
+              "src": "contracts\\iETHRewards.sol:46"
+            },
+            {
+              "contract": "iETHRewards",
+              "label": "userRewardPerTokenPaid",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "contracts\\iETHRewards.sol:47"
+            },
+            {
+              "contract": "iETHRewards",
+              "label": "rewards",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "contracts\\iETHRewards.sol:48"
+            }
+          ],
+          "types": {
+            "t_contract(IERC20)465": {
+              "label": "contract IERC20"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_address": {
+              "label": "address"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      }
+    }
+  ]
+}
