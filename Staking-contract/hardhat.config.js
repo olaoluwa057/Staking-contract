@@ -58,7 +58,7 @@ module.exports = {
   networks: {
     nahmii: {
       url: 'https://l2.testnet.nahmii.io/',
-      accounts:  { mnemonic: 'village focus wreck artwork oak labor hire security gospel flee cricket foam' },
+      accounts:  { mnemonic: 'env.PrivateKey' },
       gasPrice: 15000000,
       nvm: true
     }
