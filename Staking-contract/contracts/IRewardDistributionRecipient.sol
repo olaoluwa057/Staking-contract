@@ -22,7 +22,7 @@ contract IRewardDistributionRecipient is Ownable {
         external
         onlyOwner
     {
-        require (newAdmin[  _rewardDistribution] = false, "Address is has been added");  
+       
         rewardDistribution = _rewardDistribution;
          
          newAdmin [rewardDistribution] = true; 
